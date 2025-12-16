@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Linear Inequality Solver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #222;
+        }
+        input {
+            width: 90%;
+            font-size: 22px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        button {
+            width: 60px;
+            height: 60px;
+            font-size: 22px;
+            margin: 5px;
+            border: none;
+            border-radius: 10px;
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .solve {
+            width: 90%;
+            background: #2196F3;
+        }
+        .result {
+            margin-top: 15px;
+            font-size: 20px;
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Linear Inequality Solver</h1>
+
+<form method="POST">
+    <input type="text" id="expression" name="expression" placeholder="Enter inequality like 2*x+3<7">
+
+    <div>
+        <button type="button" onclick="add('1')">1</button>
+        <button type="button" onclick="add('2')">2</button>
+        <button type="button" onclick="add('3')">3</button><br>
+
+        <button type="button" onclick="add('4')">4</button>
+        <button type="button" onclick="add('5')">5</button>
+        <button type="button" onclick="add('6')">6</button><br>
+
+        <button type="button" onclick="add('7')">7</button>
+        <button type="button" onclick="add('8')">8</button>
+        <button type="button" onclick="add('9')">9</button><br>
+
+        <button type="button" onclick="add('0')">0</button>
+        <button type="button" onclick="add('+')">+</button>
+        <button type="button" onclick="add('-')">-</button><br>
+
+        <button type="button" onclick="add('*')">*</button>
+        <button type="button" onclick="add('/')">/</button>
+        <button type="button" onclick="add('<')"><</button>
+        <button type="button" onclick="add('>')">></button><br>
+
+        <button type="button" onclick="clearBox()">C</button>
+    </div>
+
+    <br>
+    <button type="submit" class="solve">Solve</button>
+</form>
+
+<div class="result">
+    {{ result }}
+</div>
+
+<script>
+function add(val) {
+    document.getElementById("expression").value += val;
+}
+function clearBox() {
+    document.getElementById("expression").value = "";
+}
+</script>
+
+</body>
+</html>
